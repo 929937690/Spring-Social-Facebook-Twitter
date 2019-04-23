@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Facebook Feed</title>
+</head>
+<body>
+<h3>Welcome, <span th:text="${userProfile.name}"></span>!</h3>
+<!--
+<h4>Facebook Feed:</h4>
+
+<div th:each="post:${userFeed}">
+    <b th:text="${post.from.name}">from</b> posted:
+    <p th:text="${post.message}">message text</p>
+    <img th:if="${post.picture}" th:src="${post.picture}"/>
+    <hr/>
+</div>-->
+<h4>Here are your posts:</h4>
+<form action="/tweet">
+    <th:block th:each="status:${userFeed}">
+        <input type="radio" name="tweet" th:attr="value=${status.getDescription()}" th:if="${status.getDescription()} != null" th:text="${status.getDescription()}">Post</input>
+        <br th:if="${status.getDescription()} != null"/>
+    </th:block>
+
+    <button type="submit">Tweet Post!</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <title>Spring Boot Twitter Application</title>
+</head>
+
+<body>
+<h3>Connect to twitter: </h3>
+
+<form action="/connect/twitter" method="POST">
+    <input type="hidden" name="scope" value="user_posts"/>
+    <div class="formInfo">
+        <p>You're not connected to Twitter. You can try the botton below.</p>
+    </div>
+    <p><button type="submit">Please let me connect with your twitter!</button></p>
+</form>
+</body>
+
+</html>

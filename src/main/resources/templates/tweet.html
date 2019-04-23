@@ -1,0 +1,16 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>News aggregator - Twitter feed</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<h3>Twitter feed</h3>
+
+<ul th:each="tweet : ${tweet}">
+    <li><span th:text="${tweet.getText()}">Text</span> - <span th:text="${tweet.getUser().getName()}">Author</span> </li>
+</ul>
+</body>
+</html>
